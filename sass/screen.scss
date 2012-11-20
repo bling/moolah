@@ -10,10 +10,10 @@ html, body {
 
 #content {
   height: 100%;
-  width: 600px;
+  width: 1024px;
   margin: auto;
   background: #eeeeee;
-  box-shadow: 0px 0px 6px 4px #777777;
+  @include box-shadow(#777 4px 0px 6px 2px);
 }
 
 nav {
@@ -22,7 +22,7 @@ nav {
   background: #ccc;
   position: absolute;
   top: 0px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 1);
+  @include box-shadow(#333 0px 4px 8px 0px);
 }
 
 li {
@@ -37,5 +37,13 @@ li {
   @include background(linear-gradient(#aaa, #ccc, #000));
   height: 30px;
   margin: 0px;
-//  @include
+}
+
+aside {
+  float: left;
+  background: #aaa;
+  height: 100%;
+  width: 200px;
+  border-left: solid #777 1px;
+  @include box-shadow(#555 2px 0px 6px 1px);
 }

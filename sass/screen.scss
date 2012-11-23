@@ -1,10 +1,11 @@
 @import "compass/reset";
 @import "compass";
 
+$titleHeight: 50px;
+
 html, body {
   height: 100%;
   width: 100%;
-  margin: 0;
   font-family: sans-serif;
 }
 
@@ -12,31 +13,18 @@ html, body {
   height: 100%;
   width: 1024px;
   margin: auto;
+  margin-top: $titleHeight;
   background: #eeeeee;
   @include box-shadow(#777 4px 0px 6px 2px);
 }
 
 nav {
-  height: 50px;
+  height: $titleHeight;
   width: 100%;
   background: #ccc;
   position: absolute;
   top: 0px;
   @include box-shadow(#333 0px 4px 8px 0px);
-}
-
-li {
-  display: inline-block;
-}
-
-li {
-  margin: 0px;
-}
-
-.button {
-  @include background(linear-gradient(#aaa, #ccc, #000));
-  height: 30px;
-  margin: 0px;
 }
 
 h1 {
@@ -70,4 +58,32 @@ aside {
   width: 200px;
   border-left: solid #777 1px;
   @include box-shadow(#555 2px 0px 6px 1px);
+}
+
+ul,
+ul ul {
+
+}
+
+.menu {
+  width: auto;
+  height: auto;
+  @include box-shadow(rgba(0,0,0,0.75) 0px 1px 3px 0px);
+}
+
+.menu > li > a {
+  background-color: #616975;
+  @include background-image(linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100)));
+  border-bottom: 1px solid #33373d;
+  width: 100%;
+  display: block;
+  height: 2.75em;
+  line-height: 2.75em;
+  text-decoration: none;
+  text-indent: 0.5em;
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  @include box-shadow(#878e98 0px 1px 0px 0px inset);
 }

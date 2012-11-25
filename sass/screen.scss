@@ -96,7 +96,7 @@ h1 {
 
 .menu ul li a {
   background: #fff;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
   width: 100%;
   height: $menuHeight;
   line-height: $menuHeight;
@@ -117,7 +117,6 @@ h1 {
 .menu > li > a.active {
   @include background-image(linear-gradient(top, rgb(38, 235, 78), rgb(80, 189, 117)));
   @include single-box-shadow(#333 0px 1px 0px 0px inset);
-  border-bottom: 1px solid #1a638f;
 }
 
 .menu > li > ul > li > a:hover,

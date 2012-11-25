@@ -56,6 +56,7 @@
         var submenu_a = $('.menu > li > ul > li > a');
         submenu_a.click(function(e){
             e.preventDefault();
+            submenu_a.removeClass('active');
             $(this).addClass('active');
         });
 

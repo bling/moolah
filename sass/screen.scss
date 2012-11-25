@@ -60,7 +60,7 @@ html, body {
   top: 0;
   bottom: 0;
   border-left: solid #777 1px;
-  @include box-shadow(#555 2px 0px 6px 1px);
+  @include box-shadow(#666 3px 0px 6px 2px);
 }
 
 nav {
@@ -115,11 +115,12 @@ h1 {
 
 .menu > li > a:hover,
 .menu > li > a.active {
-  border-bottom: 1px solid #103c56;
   @include background-image(linear-gradient(top, rgb(38, 235, 78), rgb(80, 189, 117)));
   @include single-box-shadow(#333 0px 1px 0px 0px inset);
+  border-bottom: 1px solid #1a638f;
 }
 
-.menu > li > a.active {
-  border-bottom: 1px solid #1a638f;
+.menu > li > ul > li > a:hover,
+.menu > li > ul > li > a.active {
+  background: #efefef;
 }

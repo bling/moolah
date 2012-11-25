@@ -21,7 +21,7 @@
                     </li>
                     <li><a href="#">Credit Cards</a>
                         <ul>
-                            <li><a href="#">VISA 1</a></li>
+                            <li class="active"><a href="#">VISA 1</a></li>
                             <li><a href="#">VISA 2</a></li>
                             <li><a href="#">VISA 3</a></li>
                             <li><a href="#">MasterCard 1</a></li>
@@ -52,6 +52,12 @@
     $(function () {
         var menu_ul = $('.menu > li > ul');
         var menu_a = $('.menu > li > a');
+
+        var submenu_a = $('.menu > li > ul > li > a');
+        submenu_a.click(function(e){
+            e.preventDefault();
+            $(this).addClass('active');
+        });
 
         menu_ul.hide();
         menu_a.click(function (e) {

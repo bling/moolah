@@ -6,31 +6,35 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </head>
 <body>
-<div class="container">
-    <div class="content">
-        <aside class="sidebar">
-            <ul class="menu">
-                <li class="mheading1"><a href="#">Assets</a>
-                    <ul>
-                        <li class="msubheading1"><a href="#">Cash</a></li>
-                        <li class="msubheading2"><a href="#">Investments</a></li>
-                    </ul>
-                </li>
-                <li class="mheading2"><a href="#">Liabilities</a>
-                    <ul>
-                        <li class="msubheading1"><a href="#">Credit Cards</a></li>
-                        <li class="msubheading1"><a href="#">Loans</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </aside>
-        <article>hello</article>
+<div class="grid">
+    <div class="content row">
+        <div class="left col">
+            <aside class="sidebar">
+                <ul class="menu">
+                    <li class="mheading1"><a href="#">Assets</a>
+                        <ul>
+                            <li class="msubheading1"><a href="#">Cash</a></li>
+                            <li class="msubheading2"><a href="#">Investments</a></li>
+                        </ul>
+                    </li>
+                    <li class="mheading2"><a href="#">Liabilities</a>
+                        <ul>
+                            <li class="msubheading1"><a href="#">Credit Cards</a></li>
+                            <li class="msubheading1"><a href="#">Loans</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="right col">
+            content
+        </div>
     </div>
-    <!--<nav>-->
-        <!--<div class="titlebar">-->
-            <!--<h1>M O O L A H</h1>-->
-        <!--</div>-->
-    <!--</nav>-->
+    <div class="header row">
+        <nav>
+            <h1>M O O L A H</h1>
+        </nav>
+    </div>
 </div>
 <script>
     $(function () {

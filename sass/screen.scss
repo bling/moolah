@@ -81,7 +81,8 @@ h1 {
 }
 
 .menu > li > a {
-  @include background-image(linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219)));
+  $baseColor: rgb(70, 200, 230);
+  @include background-image(linear-gradient(top, lighten($baseColor, 10%), darken($baseColor, 10%)));
   border-bottom: 1px solid #333;
   width: 100%;
   display: block;
@@ -92,6 +93,13 @@ h1 {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
   font-weight: 600;
   color: #fff;
+  
+  &:hover,
+  &.active {
+  	$baseColor: rgb(40, 230, 80);
+  	@include background-image(linear-gradient(top, lighten($baseColor, 20%), darken($baseColor, 10%)));
+  	@include single-box-shadow(#333 0px 1px 0px 0px inset);
+  }
 }
 
 .menu ul li a {
@@ -111,12 +119,6 @@ h1 {
 
 .menu ul li:last-child a {
   border-bottom: 1px solid #33373d;
-}
-
-.menu > li > a:hover,
-.menu > li > a.active {
-  @include background-image(linear-gradient(top, rgb(38, 235, 78), rgb(80, 189, 117)));
-  @include single-box-shadow(#333 0px 1px 0px 0px inset);
 }
 
 .menu > li > ul > li > a:hover,

@@ -27,32 +27,30 @@ html, body {
   right: 0;
 }
 
+.header.row {
+  height: $titleHeight;
+}
+
+.content.row {
+  top: $titleHeight;
+  width: $contentWidth;
+  bottom: 0;
+  margin: auto;
+}
+
 .col {
   top: 0;
   bottom: 0;
-  &.left {
-    width: $sideBarWidth;
-  }
-  &.right {
-    left: $sideBarWidth;
-    right: 0;
-    @include box-shadow(#777 4px 0px 6px 2px);
-  }
 }
 
-.header {
-  &.row {
-    height: $titleHeight;
-  }
+.left.col {
+  width: $sideBarWidth;
 }
 
-.content {
-  &.row {
-    top: $titleHeight;
-    width: $contentWidth;
-    bottom: 0;
-    margin: auto;
-  }
+.right.col {
+  left: $sideBarWidth;
+  right: 0;
+  @include box-shadow(#777 4px 0px 6px 2px);
 }
 
 .sidebar {
@@ -83,20 +81,28 @@ h1 {
 }
 
 .menu > li > a {
-  @include background-image(linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219)));
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  $baseColor: rgb(70, 200, 230);
+  @include background-image(linear-gradient(top, lighten($baseColor, 10%), darken($baseColor, 10%)));
+  border-bottom: 1px solid #333;
   width: 100%;
   display: block;
   height: $menuHeight;
   line-height: $menuHeight;
   text-decoration: none;
   text-indent: $menuHeight / 6;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
   font-weight: 600;
-  color: #555;
+  color: #fff;
+  
+  &:hover,
+  &.active {
+  	$baseColor: rgb(40, 230, 80);
+  	@include background-image(linear-gradient(top, lighten($baseColor, 20%), darken($baseColor, 10%)));
+  	@include single-box-shadow(#333 0px 1px 0px 0px inset);
+  }
 }
 
 .menu ul li a {
-  color: #888;
   background: #fff;
   border-bottom: 1px solid #ddd;
   width: 100%;
@@ -108,20 +114,14 @@ h1 {
   position: relative;
   font-size: 0.923em;
   font-weight: 400;
+  color: #888;
 }
 
-.menu > li > a:hover,
-.menu > li > a.active {
-  @include background-image(linear-gradient(top, rgb(38, 235, 78), rgb(80, 189, 117)));
-  @include single-box-shadow(#333 0px 1px 0px 0px inset);
-  color: #333;
+.menu ul li:last-child a {
+  border-bottom: 1px solid #33373d;
 }
 
-.menu > li > ul > li > a:hover {
-  color: #333;
-  background: #efefef;
-}
+.menu > li > ul > li > a:hover,
 .menu > li > ul > li > a.active {
-  color: #333;
-  background: #eee;
+  background: #efefef;
 }

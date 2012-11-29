@@ -103,7 +103,7 @@ h1 {
   }
 }
 
-.menu ul li a {
+.menu > li > ul > li > a {
   background: #fff;
   border-bottom: 1px solid #ddd;
   width: 100%;
@@ -116,15 +116,14 @@ h1 {
   font-size: 0.923em;
   font-weight: 400;
   color: #888;
+  &:hover,
+  &.active {
+      background: #efefef;
+  }
 }
 
 .menu ul li:last-child a {
-  border-bottom: 1px solid #33373d;
-}
-
-.menu > li > ul > li > a:hover,
-.menu > li > ul > li > a.active {
-  background: #efefef;
+  border-bottom: 1px solid #ccc;
 }
 
 #grid {

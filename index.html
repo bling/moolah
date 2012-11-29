@@ -53,7 +53,6 @@
     </div>
 </div>
 <script>
-    var grid;
     var columns = [
         {id: "date", name: "Date", field: "date"},
         {id: "description", name: "Description", field: "description"},
@@ -62,18 +61,17 @@
         {id: "amount", name: "Amount", field: "amount"},
     ];
 
-    var options = {
-        enableCellNavigation: true,
-        enableColumnReorder: false
-    };
-
     function randomDate() {
         var start = new Date(Date.parse('01/01/2012'));
         var end = new Date(Date.parse('12/31/2012'));
         return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     }
 
-    $(function () {
+    function updateGrid() {
+        var options = {
+            enableCellNavigation: true,
+            enableColumnReorder: false
+        };
         var data = [];
         for (var i = 0; i < 500; i++) {
             data[i] = {
@@ -85,8 +83,8 @@
             };
         }
 
-        grid = new Slick.Grid("#grid", data, columns, options);
-    })
+        var grid = new Slick.Grid("#grid", data, columns, options);
+    }
 
     $(function () {
         var menu_ul = $('.menu > li > ul');
@@ -97,6 +95,7 @@
             e.preventDefault();
             submenu_a.removeClass('active');
             $(this).addClass('active');
+            updateGrid();
         });
 
         menu_ul.hide();
